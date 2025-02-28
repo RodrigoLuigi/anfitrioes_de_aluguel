@@ -15,3 +15,8 @@ class AccommodationController:
    def get_all_accommodations():
       response, status_code = accommodation_service.get_all_accommodations()
       return jsonify(response), status_code
+   
+   @staticmethod
+   def get_accommodation_by_id(accommodation_id):
+        response, status_code = accommodation_service.get_accommodation_by_id(accommodation_id)
+        return jsonify(response), status_code

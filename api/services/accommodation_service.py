@@ -46,3 +46,15 @@ class AccommodationService():
             return {'error': 'Erro ao buscar acomodações.', 'details': str(e)}, 500
         except Exception as e:
             return {'error': 'Erro inesperado ao buscar acomodações.', 'details': str(e)}, 500
+    
+    def get_accommodation_by_id(self, accommodation_id):
+        try:
+            accommodation = Accommodation.query.get(accommodation_id)
+            if not accommodation:
+                return {'error': 'Acomodação não encontrada.'}, 404
+
+            return accommodation.as_dict(), 200
+        except SQLAlchemyError as e:
+            return {'error': 'Erro ao buscar a acomodação.', 'details': str(e)}, 500
+        except Exception as e:
+            return {'error': 'Erro inesperado ao buscar a acomodação.', 'details': str(e)}, 500

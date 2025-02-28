@@ -16,3 +16,10 @@ accommodation_bp.add_url_rule(
   AccommodationController.get_all_accommodations,
   methods=['GET']
 )
+
+accommodation_bp.add_url_rule(
+  '/acomodacoes/<uuid:accommodation_id>',
+  'get_accommodation_by_id',
+  AccommodationController.get_accommodation_by_id,
+  methods=['GET']  
+)
