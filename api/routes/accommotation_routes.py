@@ -23,3 +23,9 @@ accommodation_bp.add_url_rule(
   AccommodationController.get_accommodation_by_id,
   methods=['GET']  
 )
+
+accommodation_bp.add_url_rule(
+  '/acomodacoes/busca', 'search_accommodations_by_locale',
+  AccommodationController.search_accommodations_by_locale, 
+  methods=['GET']
+)

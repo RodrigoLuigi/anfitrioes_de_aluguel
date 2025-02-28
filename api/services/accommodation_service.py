@@ -58,3 +58,30 @@ class AccommodationService():
             return {'error': 'Erro ao buscar a acomodação.', 'details': str(e)}, 500
         except Exception as e:
             return {'error': 'Erro inesperado ao buscar a acomodação.', 'details': str(e)}, 500
+        
+    def search_accommodations_by_locale(self, locale=None):
+        try:
+            query = self.db_session.query(Accommodation)
+
+            if locale:
+                query = query.filter(Accommodation.locale.ilike(f"%{locale}%"))
+
+            accommodations = query.order_by(Accommodation.id).all()
+
+            accommodations_list = [
+                {
+                    'id': accommodation.id,
+                    'name': accommodation.name,
+                    'image_url': accommodation.image_url,
+                    'price_per_night': accommodation.price_per_night,
+                    'locale': accommodation.locale
+                } 
+                for accommodation in accommodations
+            ]
+
+            return {'accommodations': accommodations_list}, 200
+        
+        except SQLAlchemyError as e:
+            return {'error': 'Erro ao buscar acomodações.', 'details': str(e)}, 500
+        except Exception as e:
+            return {'error': 'Erro inesperado.', 'details': str(e)}, 500

@@ -18,5 +18,11 @@ class AccommodationController:
    
    @staticmethod
    def get_accommodation_by_id(accommodation_id):
-        response, status_code = accommodation_service.get_accommodation_by_id(accommodation_id)
-        return jsonify(response), status_code
+      response, status_code = accommodation_service.get_accommodation_by_id(accommodation_id)
+      return jsonify(response), status_code
+
+   @staticmethod
+   def search_accommodations_by_locale():
+      locale = request.args.get('locale', '')
+      response, status_code = accommodation_service.search_accommodations_by_locale(locale)
+      return jsonify(response), status_code
