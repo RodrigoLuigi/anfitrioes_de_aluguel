@@ -10,3 +10,8 @@ class AccommodationController:
       data = request.get_json()
       response, status_code = accommodation_service.create_accommodation(data)
       return jsonify(response), status_code
+   
+   @staticmethod
+   def get_all_accommodations():
+      response, status_code = accommodation_service.get_all_accommodations()
+      return jsonify(response), status_code

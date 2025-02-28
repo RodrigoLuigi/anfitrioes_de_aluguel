@@ -7,18 +7,15 @@ class AccommodationService():
 
     def create_accommodation(self, data):
       try:
-          # Validação dos campos obrigatórios
           required_fields = ['name', 'image_url', 'price_per_night', 'locale']
           for field in required_fields:
               if field not in data or not data[field]:
                   return {'error': f'O campo {field} é obrigatório.'}, 400
           
-          # Verificando se já existe uma acomodação com o mesmo nome
           existing_accommodation = Accommodation.query.filter_by(name=data['name']).first()
           if existing_accommodation:
               return {'error': 'Já existe uma acomodação com esse nome.'}, 400
           
-          # Criando nova acomodação
           new_accommodation = Accommodation(
               name=data['name'],
               image_url=data['image_url'],
@@ -26,7 +23,6 @@ class AccommodationService():
               locale=data['locale']
           )
 
-          # Iniciando transação no banco de dados
           self.db_session.add(new_accommodation)
           self.db_session.commit()
 
@@ -37,3 +33,16 @@ class AccommodationService():
           return {'error': 'Erro ao salvar no banco de dados.', 'details': str(e)}, 500
       except Exception as e:
           return {'error': 'Erro inesperado.', 'details': str(e)}, 500
+      
+    def get_all_accommodations(self):
+        try:
+            accommodations = Accommodation.query.all()
+            if not accommodations:
+                return {'message': 'Nenhuma acomodação encontrada.'}, 404
+
+            accommodations_list = [accommodation.as_dict() for accommodation in accommodations]
+            return accommodations_list, 200
+        except SQLAlchemyError as e:
+            return {'error': 'Erro ao buscar acomodações.', 'details': str(e)}, 500
+        except Exception as e:
+            return {'error': 'Erro inesperado ao buscar acomodações.', 'details': str(e)}, 500
