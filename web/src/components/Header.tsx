@@ -1,5 +1,5 @@
 import { Github, Instagram, Linkedin } from "lucide-react";
-import anfitrioesLogo from "../../public/anfitrioes_de_aluguel_logo.png";
+import anfitrioesLogo from "../assets/anfitrioes_de_aluguel_logo.png";
 
 export function Header() {
 	return (

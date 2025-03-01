@@ -1,9 +1,9 @@
-import { Header } from "./components/Header";
+import { Routes } from "./routes";
 
 export function App() {
 	return (
 		<>
-			<Header />
+			<Routes />
 		</>
 	);
 }
