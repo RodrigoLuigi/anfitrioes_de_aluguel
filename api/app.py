@@ -1,7 +1,7 @@
 from flask import Flask
 from database.db import db
 from flask_migrate import Migrate
-from config.config import Config
+from api.config.db_config import Config
 from routes.accommotation_routes import accommodation_bp
 
 app = Flask(__name__)
