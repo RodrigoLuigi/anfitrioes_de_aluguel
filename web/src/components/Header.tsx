@@ -13,7 +13,7 @@ export function Header() {
 			<img
 				src={vooTrajetoria}
 				alt="trajetória voo de avião"
-				className="w-96 h-28 absolute top-12 -rotate-[25deg] opacity-25 sm:relative sm:rotate-0 sm:top-0 sm:opacity-100"
+				className="w-96 sm:w-60 md:w-72 lg:w-96 h-28 absolute top-12 -rotate-[25deg] opacity-15 sm:relative sm:rotate-0 sm:top-0 sm:opacity-100"
 			/>
 
 			<div className="flex flex-col gap-2">
