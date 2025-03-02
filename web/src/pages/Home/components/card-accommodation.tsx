@@ -9,7 +9,7 @@ export function CardAccommodation({ accommodation }: CardAccommodationProps) {
 	return (
 		<a
 			href="/#"
-			className="flex flex-col w-full max-w-[350px] bg-white rounded-sm text-black shadow-md shadow-blue-50/25 hover:scale-[1.015] transition-all 2s ease-in-out"
+			className="flex flex-col w-full max-w-[350px] bg-white rounded-sm text-black shadow-md shadow-blue-50/25 hover:scale-[1.015] transition-all 2s ease-in-out outline-none focus:ring-blue-500 focus:ring-2"
 		>
 			<img
 				src={accommodation.image_url}

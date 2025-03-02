@@ -24,7 +24,7 @@ export function Header() {
 				<div className="flex justify-center gap-4">
 					<a
 						href="https://www.instagram.com/lrodrigo_luigi/"
-						className="size-8 lg:size-12 bg-blue-900 rounded-md flex items-center justify-center text-[#ffffff] hover:text-blue-300"
+						className="size-8 lg:size-12 bg-blue-900 rounded-md flex items-center justify-center text-[#ffffff] outline-none hover:text-blue-300 focus:ring-blue-500 focus:ring-2"
 						target="_blank"
 						rel="noreferrer"
 					>
@@ -33,7 +33,7 @@ export function Header() {
 
 					<a
 						href="https://www.linkedin.com/in/rodrigo-luigi/"
-						className="size-8 lg:size-12 bg-blue-900 rounded-md flex items-center justify-center text-[#ffffff] hover:text-blue-300"
+						className="size-8 lg:size-12 bg-blue-900 rounded-md flex items-center justify-center text-[#ffffff] outline-none hover:text-blue-300 focus:ring-blue-500 focus:ring-2"
 						target="_blank"
 						rel="noreferrer"
 					>
@@ -42,7 +42,7 @@ export function Header() {
 
 					<a
 						href="https://github.com/RodrigoLuigi"
-						className="size-8 lg:size-12 bg-blue-900 rounded-md flex items-center justify-center text-[#ffffff] hover:text-blue-300"
+						className="size-8 lg:size-12 bg-blue-900 rounded-md flex items-center justify-center text-[#ffffff] outline-none hover:text-blue-400 focus:ring-blue-400 focus:ring-2"
 						target="_blank"
 						rel="noreferrer"
 					>
