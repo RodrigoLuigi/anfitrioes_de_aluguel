@@ -1,10 +1,12 @@
 from flask import Flask
+from flask_cors import CORS
 from database.db import db
 from flask_migrate import Migrate
-from api.config.db_config import Config
+from config.db_config import Config
 from routes.accommotation_routes import accommodation_bp
 
 app = Flask(__name__)
+CORS(app)
 
 app.config.from_object(Config)
 
@@ -14,4 +16,4 @@ migrate = Migrate(app, db)
 app.register_blueprint(accommodation_bp)
 
 if __name__ == '__main__':
-  app.run(debug=True, port=5050, host='0.0.0.0')
+  app.run(debug=True, port=3333, host='0.0.0.0')
