@@ -8,12 +8,12 @@ interface CardAccommodationProps {
 export function CardAccommodation({ accommodation }: CardAccommodationProps) {
 	return (
 		<a
-			href="/#"
+			href={`/details/${accommodation.id}`}
 			className="flex flex-col w-full max-w-[350px] bg-white rounded-sm text-black shadow-md shadow-blue-50/25 hover:scale-[1.015] transition-all 2s ease-in-out outline-none focus:ring-blue-500 focus:ring-2"
 		>
 			<img
 				src={accommodation.image_url}
-				alt="imagem apartamento beira-mar"
+				alt={`imagem ${accommodation.name}`}
 				className="shadow-lg shadow-zinc-500/50 rounded-t-md w-full h-[200px]"
 			/>
 
