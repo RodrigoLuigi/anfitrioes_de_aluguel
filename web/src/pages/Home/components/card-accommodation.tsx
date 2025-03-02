@@ -9,12 +9,12 @@ export function CardAccommodation({ accommodation }: CardAccommodationProps) {
 	return (
 		<a
 			href="/#"
-			className="flex flex-col w-full max-w-[350px] bg-white rounded-sm text-black shadow-md shadow-blue-50/25"
+			className="flex flex-col w-full max-w-[350px] bg-white rounded-sm text-black shadow-md shadow-blue-50/25 hover:scale-[1.015] transition-all 2s ease-in-out"
 		>
 			<img
 				src={accommodation.image_url}
 				alt="imagem apartamento beira-mar"
-				className="shadow-lg shadow-zinc-500/50 rounded-t-md w-full max-h-[200px]"
+				className="shadow-lg shadow-zinc-500/50 rounded-t-md w-full h-[200px]"
 			/>
 
 			<div className="p-6 flex flex-col gap-9">

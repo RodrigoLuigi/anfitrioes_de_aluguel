@@ -15,22 +15,23 @@ export function Home() {
 	const [accommodations, setAccommodations] = useState<AccommodationProps[]>(
 		[],
 	);
+	const [search, setSearch] = useState("");
 
 	useEffect(() => {
 		async function fetchAccommodations() {
-			const response = await api.get("/acomodacoes");
+			const response = await api.get(`/acomodacoes/busca?locale=${search}`);
 			setAccommodations(response.data as AccommodationProps[]);
 		}
 
 		fetchAccommodations();
-	}, []);
+	}, [search]);
 
 	return (
 		<>
 			<Header />
 
 			<main className="w-full px-6 py-12 lg:px-24">
-				<SearchAccommodationInput />
+				<SearchAccommodationInput search={search} setSearch={setSearch} />
 
 				<div className="flex flex-col mt-14 gap-12 md:flex-row flex-wrap items-center justify-center lg:gap-8">
 					{accommodations.length > 0 &&

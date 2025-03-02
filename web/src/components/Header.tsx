@@ -1,6 +1,6 @@
 import { Github, Instagram, Linkedin } from "lucide-react";
 import anfitrioesLogo from "../assets/anfitrioes_de_aluguel_logo.png";
-
+import vooTrajetoria from "../assets/voo-trajetoria.png";
 export function Header() {
 	return (
 		<header className="flex flex-col items-center gap-2 bg-white p-4 border-b border-solid border-indigo-950 lg:flex-row lg:p-0 lg:px-24 lg:justify-between">
@@ -8,6 +8,12 @@ export function Header() {
 				src={anfitrioesLogo}
 				alt="logo anfitriões de aluguel"
 				className="w-60"
+			/>
+
+			<img
+				src={vooTrajetoria}
+				alt="trajetória voo de avião"
+				className="w-96 h-28"
 			/>
 
 			<div className="flex flex-col gap-2">
