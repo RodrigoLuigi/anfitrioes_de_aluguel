@@ -79,7 +79,7 @@ class AccommodationService():
                 for accommodation in accommodations
             ]
 
-            return {'accommodations': accommodations_list}, 200
+            return accommodations_list, 200
         
         except SQLAlchemyError as e:
             return {'error': 'Erro ao buscar acomodações.', 'details': str(e)}, 500
