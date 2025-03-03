@@ -1,4 +1,4 @@
-# Nome da Aplicação
+# Anfitriões de Aluguel - Desafio Técnico
 
   Anfitriões de aluguel, desafio técnico. 
   Listagem, busca e detalhes sobre aluguel de acomodações.
