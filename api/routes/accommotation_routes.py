@@ -18,7 +18,7 @@ accommodation_bp.add_url_rule(
 )
 
 accommodation_bp.add_url_rule(
-  '/acomodacoes/<uuid:accommodation_id>',
+  '/acomodacoes/<int:accommodation_id>',
   'get_accommodation_by_id',
   AccommodationController.get_accommodation_by_id,
   methods=['GET']  

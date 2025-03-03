@@ -1,19 +1,18 @@
-from sqlalchemy.dialects.postgresql import UUID, TEXT, NUMERIC
-from sqlalchemy import func
+from sqlalchemy.dialects.postgresql import  NUMERIC
 from database.db import db
 
 class Accommodation(db.Model):
   __tablename__ = 'accommodation'
 
-  id = db.Column(UUID(as_uuid=True), primary_key=True, default=func.uuid_generate_v4())
+  id = db.Column(db.Integer(), primary_key=True, nullable=False, autoincrement=True)
   name = db.Column(db.String(255), nullable=False)
-  image_url = db.Column(TEXT(), nullable=False)
+  image_url = db.Column(db.Text(), nullable=False)
   price_per_night = db.Column(NUMERIC(), nullable=False)
-  locale = db.Column(TEXT(), nullable=False)
+  locale = db.Column(db.Text(), nullable=False)
 
   def as_dict(self):
     return {
-    'id': str(self.id),
+    'id': self.id,
     'name': self.name,
     'image_url': self.image_url,
     'price_per_night': self.price_per_night,
